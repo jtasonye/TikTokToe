@@ -1,0 +1,229 @@
+:root{
+    --black: #040404;
+    --pink: #de8c9d;
+    --red: #fe2858;
+    --turquoise: #2af0ea;
+    --cyan: #397684;
+    --black: #010127;
+}
+
+body{
+    background-color: var(--cyan);
+}
+
+.tablet:before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 20px;
+}
+
+.tablet {
+    position: relative;
+    width: 768px;
+    height: 1024px;
+    margin: auto;
+    border: 16px black solid;
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-radius: 36px;
+    background-color: var(--black);
+}
+
+.tablet:after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 50%;
+    bottom: -65px;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 50%;
+  }
+
+.center{
+    text-align: center;
+}
+
+.border, #user-boxes, #message, .liClass, .list{
+    color: var(--red);
+    text-shadow: 1px 1px var(--turquoise);
+}
+
+h1, h2{
+    font-family: "Helvetica Neue Bold Extended", Arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: -1px;
+    margin-bottom: -3px;
+}
+
+h1{
+    font-size: 48px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+#user-boxes{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size:xx-large;
+    font-family: "Helvetica Neue Bold Extended", Arial, sans-serif;
+    margin-top: 25px;
+    padding-bottom: 20px;
+}
+
+#message {
+    font-size: 45px;
+    margin: 10px 0px 20px 0px;
+    font-family: "Helvetica Neue Bold Extended", Arial, sans-serif;
+}
+
+#player1, #player2{
+    border-radius: 10px;
+}
+
+#player1{
+    border-top: 1px solid var(--turquoise);
+    border-bottom: 1px solid var(--pink);
+}
+
+#player2{
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+}
+
+#board{
+    margin: auto auto auto auto;
+    text-align: center;
+    border-collapse: collapse;
+    font-size:100px;
+}
+
+td{
+    border: 7px solid var(--turquoise);
+    width: 150px;
+    height: 150px;
+}
+
+/* Removes the top border */
+#top-left, #top-middle, #top-right{
+    border-top: 0px;
+}
+
+/* Removes the right border */
+#top-right, #middle-right, #bottom-right{
+    border-right: 0px;
+}
+
+/* Removes the bottom border */
+#bottom-left, #bottom-middle, #bottom-right{
+    border-bottom: 0px;
+}
+
+/* Removes the left border */
+#top-left, #middle-left, #bottom-left{
+    border-left: 0px;
+}
+
+#restart-button-container{
+    padding: 30px 0px 15px 0px;
+}
+
+td, button{
+    cursor: pointer;
+}
+
+button{
+    width: 500px;
+    border-radius: 25px;
+    background-color: var(--red);
+    color: var(--turquoise);
+    font-size: 20px;
+    font-family: "Helvetica Neue Bold Extended", Arial, sans-serif;
+    text-shadow: 1px 1px white;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+} 
+
+.liClass {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
+}
+
+.lang {
+    display: block; 
+    margin: 10px;
+    text-align: center; 
+}
+
+.lang img {
+    display: block;
+    width: 100px; 
+    height: auto; 
+    margin: 0 auto;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#gif0-container, #gif1-container, #gif2-container,
+#gif3-container, #gif4-container, #gif5-container,
+#gif6-container, #gif7-container, #gif8-container,
+#gif9-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+#gif0-container img, #gif1-container img, #gif2-container img,
+#gif3-container img, #gif4-container img, #gif5-container img,
+#gif6-container img, #gif7-container img, #gif8-container img,
+#gif9-container img {
+    width: 100%;
+    height: 100%;
+    animation: bounceIn 0.5s ease forwards, fadeOut 1.5s ease forwards 2.5s;
+}
