@@ -27,7 +27,8 @@ body{
 .tablet {
     position: relative;
     width: 768px;
-    height: 1024px;
+    /* height: 1024px; */
+    height: 1098px;
     margin: auto;
     border: 16px black solid;
     border-top-width: 60px;
@@ -82,6 +83,24 @@ h2{
     font-family: "Helvetica Neue Bold Extended", Arial, sans-serif;
     margin-top: 25px;
     padding-bottom: 20px;
+}
+
+#score-boxes{
+    display: flex;
+    justify-content: space-around;
+    text-align: end;
+}
+
+#score1, #score2{
+    color: var(--black);
+    text-align: center;
+    line-height: 60px;
+    border: 1px solid var(--red);
+    background-image: linear-gradient(to bottom right, var(--turquoise), var(--pink));
+    border-radius: 10px;
+    width: 100px;
+    height: 60px;
+    font-size: 45px;
 }
 
 #message {

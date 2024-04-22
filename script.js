@@ -72,10 +72,28 @@ function checkWinner() {
             spaces[b].innerHTML === currentPlayer &&
             spaces[c].innerHTML === currentPlayer
         ) {
-            if (currentPlayer === p1){
+            if (currentPlayer === p1) {
                 result.innerHTML = "Player 1 wins!";
+                // Increment the counter for Player 1
+                let score1Element = document.getElementById("score1");
+                let score1 = parseInt(score1Element.innerHTML);
+                if (!isNaN(score1)) {
+                    score1++;
+                    score1Element.innerHTML = score1;
+                } else {
+                    score1Element.innerHTML = "1";
+                }
             } else {
                 result.innerHTML = "Player 2 wins!";
+                // Increment the counter for Player 2
+                let score2Element = document.getElementById("score2");
+                let score2 = parseInt(score2Element.innerHTML);
+                if (!isNaN(score2)) {
+                    score2++;
+                    score2Element.innerHTML = score2;
+                } else {
+                    score2Element.innerHTML = "1";
+                }
             }
 
             // Display the winner GIF
