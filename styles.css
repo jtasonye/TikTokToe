@@ -93,6 +93,7 @@ h2{
 
 #score1, #score2{
     color: var(--black);
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     line-height: 60px;
     border: 1px solid var(--red);

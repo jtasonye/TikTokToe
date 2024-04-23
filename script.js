@@ -57,13 +57,9 @@ const winLogic = [
     [0,4,8], [2,4,6],          // Diagonals
 ];
 
+// ******* Fix all positions filled bug **********
 function checkWinner() {
-    // Check for a draw
-    // Spread operator ([...]) gets all the values in the `spaces` object
-    if ([...spaces].every((space) => space.innerHTML !== "")) {
-        result.innerHTML = "It's a draw";
-        gif9Container.style.display = "block";
-    }
+    let winner = false;
 
     for(let i=0; i < winLogic.length; i++){
         const [a,b,c] = winLogic[i];
@@ -77,6 +73,7 @@ function checkWinner() {
                 // Increment the counter for Player 1
                 let score1Element = document.getElementById("score1");
                 let score1 = parseInt(score1Element.innerHTML);
+                winner = true;
                 if (!isNaN(score1)) {
                     score1++;
                     score1Element.innerHTML = score1;
@@ -88,6 +85,7 @@ function checkWinner() {
                 // Increment the counter for Player 2
                 let score2Element = document.getElementById("score2");
                 let score2 = parseInt(score2Element.innerHTML);
+                winner = true;
                 if (!isNaN(score2)) {
                     score2++;
                     score2Element.innerHTML = score2;
@@ -103,6 +101,17 @@ function checkWinner() {
             spaces.forEach((space) => {
                 space.removeEventListener("click", handleClick);
             });
+        }
+    }
+
+    // Check for a draw
+    // Spread operator ([...]) gets all the values in the `spaces` object
+    if ([...spaces].every((space) => space.innerHTML !== "")) {
+        if(winner === true){
+            gif9Container.style.display = "none";
+        } else{
+            result.innerHTML = "It's a draw";
+            gif9Container.style.display = "block";
         }
     }
 }
@@ -131,6 +140,8 @@ function makeRestartButton() {
 
         // Hide Draw Gif containers
         gif9Container.style.display = "none";
+
+        winner = false;
 
         // Re-add the event listeners
         makeMove();
